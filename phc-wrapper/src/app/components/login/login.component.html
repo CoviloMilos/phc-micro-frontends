@@ -1,0 +1,38 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" style="margin-top: 60px;">
+    <mat-card class="box">
+        <mat-card-header>
+            <img src="../../assets/images/plant.png" class="user-avatar" />
+        </mat-card-header>
+        <mat-card-header>
+            <mat-card-title><small>Plant Health Care</small></mat-card-title>
+        </mat-card-header>
+
+        <form id="loginForm" [formGroup]="loginForm" (ngSubmit)="submitForm()" novalidate>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter username</mat-label>
+                <input name="username" matInput placeholder="Username" formControlName="username">
+                <mat-error *ngIf="errorHandling('username', 'required')">
+                    You must provide <strong> username.</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter password</mat-label>
+                <input name="password" matInput placeholder="password" type="password" formControlName="password">
+                <mat-error *ngIf="errorHandling('password', 'required')">
+                    You must provide <strong> password.</strong>
+                </mat-error>
+            </mat-form-field>
+            <div fxLayout="column">
+                <button mat-stroked-button color="accent" class="btn-block">Log in</button>
+                <a mat-stroked-button color="accent" class="btn-block" style="text-decoration: none;" (click)="openRegisterDialog()">Register</a>
+            </div>
+        </form>
+
+    </mat-card>
+</div>
+
+
+
+

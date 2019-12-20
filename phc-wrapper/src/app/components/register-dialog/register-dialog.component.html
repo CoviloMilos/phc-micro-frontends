@@ -1,0 +1,90 @@
+  
+<div class="row">
+    <div class="column">
+          <form [formGroup]="registerForm" (ngSubmit)="submitForm()" novalidate>
+            <h5 class="card-title">Register</h5>
+  
+            <!-- First Name -->
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Enter first name</mat-label>
+              <input matInput placeholder="First name" formControlName="firstName">
+              <!-- error -->
+              <mat-error *ngIf="errorHandling('firstName', 'required')">
+                You must provide <strong>first name.</strong>
+              </mat-error>
+            </mat-form-field>
+            
+            <!-- Last Name -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter last name</mat-label>
+                <input matInput placeholder="Last name" formControlName="lastName">
+                <!-- error -->
+                <mat-error *ngIf="errorHandling('lastName', 'required')">
+                    You must provide <strong>last name.</strong>
+                </mat-error>
+            </mat-form-field>
+            
+            <!-- Email -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter email</mat-label>
+                <input matInput placeholder="Email" formControlName="email">
+                <!-- error -->
+                <mat-error *ngIf="errorHandling('email', 'required')">
+                    You must provide <strong>email.</strong>
+                </mat-error>
+                <mat-error *ngIf="errorHandling('email', 'email')">
+                    You must provide <strong>valid email.</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Username -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter username</mat-label>
+                <input matInput placeholder="Username" formControlName="username">
+                <!-- error -->
+                <mat-error *ngIf="errorHandling('username', 'required')">
+                    You must provide <strong>username.</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Password -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter password</mat-label>
+                <input matInput type="password" placeholder="Password" formControlName="password">
+                <!-- error required-->
+                <mat-error *ngIf="errorHandling('password', 'required')">
+                    You must provide <strong>password.</strong>
+                </mat-error>
+                <!-- error min num of chars -->
+                <mat-error *ngIf="errorHandling('password', 'minlength')">
+                    Password must have at least <strong>{{minCharsLen}} characters!</strong>
+                </mat-error>
+                <!-- error max num of chars -->
+                <mat-error *ngIf="errorHandling('password', 'maxlength')">
+                    Password must have max <strong>{{maxCharsLen}} characters!</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Password Confirm-->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter password</mat-label>
+                <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword" (input)="onPasswordInput()">
+                <!-- error required-->
+                <mat-error *ngIf="errorHandling('confirmPassword', 'required')">
+                    You must provide <strong>confirm password.</strong>
+                </mat-error>
+                <!-- error min num of chars -->
+                <mat-error *ngIf="formConfirmPassword.invalid && !formConfirmPassword.hasError('required')">
+                    <strong>Passwords don't match</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Submit -->
+            <div class="button-wrapper">
+              <button mat-stroked-button color="accent" class="btn-block">Submit</button>
+            </div>
+
+          </form>
+    </div>
+    
+</div>

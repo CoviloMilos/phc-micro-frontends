@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="column">
+          <form [formGroup]="updateForm" (ngSubmit)="submitForm()" novalidate>
+            <h5 class="card-title">Flower</h5>
+  
+            <!-- Name Ser -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter serbian name</mat-label>
+                <input matInput placeholder="Name on Serbian" formControlName="nameSer">
+            </mat-form-field>
+            
+            <!-- Name Lat -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter latin name</mat-label>
+                <input matInput placeholder="Name on Latin" formControlName="nameLat">
+            </mat-form-field>
+            
+            <!-- Watering Period -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Watering Period</mat-label>
+                <input matInput placeholder="Watering Period" formControlName="wateringPeriod">
+            </mat-form-field>
+
+            <!-- Description -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter description</mat-label>
+                <textarea cols="15" rows="10" matInput placeholder="Description" formControlName="description"></textarea>
+            </mat-form-field>
+
+            <!-- Submit -->
+            <div class="button-wrapper">
+              <button mat-flat-button color="primary">Submit</button>
+            </div>
+  
+          </form>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="container mat-elevation-z8">
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+        
+    <button type="button" (click)="openDialogCreate()" class="btn btn-light">
+        <i class="fa fa-plus"></i>
+    </button>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="flowerId">
+            <th mat-header-cell *matHeaderCellDef>Flower ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.flower_id}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="nameSer">
+            <th mat-header-cell *matHeaderCellDef>Name on Serbian</th>
+            <td mat-cell *matCellDef="let element"> {{element.name_ser}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nameLat">
+            <th mat-header-cell *matHeaderCellDef>Name on Latin</th>
+            <td mat-cell *matCellDef="let element"> {{element.name_lat}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="wateringPeriod">
+            <th mat-header-cell *matHeaderCellDef>Watering Period</th>
+            <td mat-cell *matCellDef="let element"> {{element.watering_period}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+
+        <ng-container  matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element;">
+                <button class="edit" mat-icon-button color="primary" (click)="openDialogEdit(element)">
+                    <mat-icon aria-label="Edit">edit</mat-icon>
+                </button>
+                <button class="delete" mat-icon-button color="danger" (click)="handleDelete(element.flower_id)">
+                    <mat-icon aria-label="Delete">delete</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+        
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [length]="length"
+          [pageSize]="pageSize"
+          [pageSizeOptions]="pageSizeOptions"
+          (page)="pageEvent = $event">
+    </mat-paginator>
+</div>

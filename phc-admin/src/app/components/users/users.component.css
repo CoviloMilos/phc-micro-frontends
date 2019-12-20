@@ -1,0 +1,58 @@
+table {
+    text-align: center !important;
+    width: 100%;
+  }
+  
+.mat-header-cell {
+text-align: center;
+}
+
+.container {
+  padding: 10px;
+}
+
+.btn {
+  float: right;
+  margin-top: 10px;
+}
+
+mat-paginator {
+  width: 100%;
+}
+
+.row {
+  text-align: center;
+  width: 100%;
+}
+
+.column {
+  text-align: center;
+  width: 100%;
+}
+
+.grid {
+  border: 1px solid gray;
+  width: 400px;
+  height: 200px;
+  grid-gap: 5px;
+    
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 50%);
+  overflow: hidden;
+  
+  
+}
+.x22 {
+  background-color: #1c1c1c;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.x22 {
+  grid-column: span 3;
+}

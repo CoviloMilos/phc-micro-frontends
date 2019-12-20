@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-light">
+    <div class="container">
+        <span class="navbar-brand text-dark" href="#">
+            <img src="../../../assets/images/devo.gif">
+            PHC - User UI
+        </span>
+
+        <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
+            <li class="nav-item"  routerLinkActive="active">
+                <a class="nav-link text-dark" [routerLink]="['/home']" >Home</a>
+            </li>
+            <li class="nav-item"  routerLinkActive="active">
+                <a class="nav-link text-dark" [routerLink]="['/profile']" >Profile</a>
+            </li>
+            <li class="nav-item"  routerLinkActive="active">
+                <a class="nav-link text-dark" [routerLink]="['/about']" >About</a>
+            </li>
+            <li *ngIf="isAdmin()" class="nav-item"  routerLinkActive="active">
+                <a class="nav-link text-dark" [routerLink]="['/users-management']" >Users Manager</a>
+            </li>
+            <li *ngIf="isAdmin()" class="nav-item"  routerLinkActive="active">
+                <a class="nav-link text-dark" [routerLink]="['/flowers-management']" >Flowers Manager</a>
+            </li>
+            <li *ngIf="isAdmin()" class="nav-item">
+                <div class="dropdown" dropdown>
+                    <a class="nav-link dropdown-toggle text-dark" dropdownToggle><i class="fa fa-envelope mr-1"></i></a>
+                    <div class="dropdown-menu mt-3" *dropdownMenu>
+                        <p class="dropdown-item text-dark"><strong>This options is used for manual activation of notificaion sender.</strong></p>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-dark" (click)="openConfirmDialog()"><i class="fa fa-send mr-1"></i>Notify</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div *ngIf="loggedIn()" class="dropdown" dropdown>
+            <span class="mr-1">
+                <img src="../../../assets/images/plant.png" alt="">
+            </span>
+            <a class="dropdown-toggle text-dark" dropdownToggle>
+                Hi {{username}}
+            </a>
+            <div class="dropdown-menu mt-3" *dropdownMenu>
+                <a class="dropdown-item text-dark" [routerLink]="['/login']"  (click)="logout()"><i class="fa fa-sign-out mr-1"></i>Logout</a>
+            </div>
+        </div>
+    </div>
+
+  </nav>
+
+

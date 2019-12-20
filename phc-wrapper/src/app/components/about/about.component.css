@@ -1,0 +1,22 @@
+
+img {
+  width: 100%;
+}
+
+.img-arch{
+  max-width: 40%;
+  max-height: 40%;
+  display: block;
+  cursor: pointer;
+}
+
+mat-card-content {
+  text-align: center;
+}
+
+mat-card-actions {
+  text-align: center;
+}
+.stack-logo {
+  width: 30%;
+}

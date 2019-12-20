@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="column">
+          <form [formGroup]="updateForm" (ngSubmit)="submitForm()" novalidate>
+            <h5 class="card-title">User</h5>
+  
+            <!-- First Name -->
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Enter first name</mat-label>
+              <input matInput placeholder="First name" formControlName="firstName">
+              <!-- error -->
+              <mat-error *ngIf="errorHandling('firstName', 'required')">
+                You must provide <strong>user's first name.</strong>
+              </mat-error>
+            </mat-form-field>
+            
+            <!-- Last Name -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter last name</mat-label>
+                <input matInput placeholder="Last name" formControlName="lastName">
+                <!-- error -->
+                <mat-error *ngIf="errorHandling('lastName', 'required')">
+                    You must provide <strong>user's last name.</strong>
+                </mat-error>
+            </mat-form-field>
+            
+            <!-- Email -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter email</mat-label>
+                <input matInput placeholder="Email" formControlName="email">
+                <!-- error -->
+                <mat-error *ngIf="errorHandling('email', 'required')">
+                    You must provide <strong>user's email.</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Username -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter username</mat-label>
+                <input matInput placeholder="Username" formControlName="username">
+                <!-- error -->
+                <mat-error *ngIf="errorHandling('username', 'required')">
+                    You must provide <strong>user's username.</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Password -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter new password</mat-label>
+                <input matInput type="password" placeholder="New Password" formControlName="newPassword">
+                <!-- error required-->
+                <mat-error *ngIf="errorHandling('newPassword', 'required')">
+                    You must provide <strong>user's password.</strong>
+                </mat-error>
+                <!-- error min num of chars -->
+                <mat-error *ngIf="errorHandling('newPassword', 'minlength')">
+                    Password must have at least <strong>{{minCharsLen}} characters!</strong>
+                </mat-error>
+                <!-- error max num of chars -->
+                <mat-error *ngIf="errorHandling('newPassword', 'maxlength')">
+                    Password must have max <strong>{{maxCharsLen}} characters!</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Password Confirm-->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter password</mat-label>
+                <input matInput type="password" placeholder="Confirm New Password" formControlName="newConfirmPassword" (input)="onPasswordInput()">
+                <!-- error required-->
+                <mat-error *ngIf="errorHandling('newConfirmPassword', 'required')">
+                    You must provide <strong>user's confirm password.</strong>
+                </mat-error>
+                <!-- error min num of chars -->
+                <mat-error *ngIf="formConfirmPassword.invalid && !formConfirmPassword.hasError('required')">
+                    <strong>Passwords don't match</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <!-- isAdmin -->
+            <div class="misc-bottom-padding">
+                <mat-label>Is user admin?</mat-label>&nbsp;&nbsp;
+                <mat-radio-group aria-label="Select an option" formControlName="admin">
+                    <mat-radio-button value="True">True</mat-radio-button>&nbsp;
+                    <mat-radio-button value="False">False</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <!-- Submit -->
+            <div class="button-wrapper">
+              <button mat-flat-button color="primary">Submit</button>
+            </div>
+  
+          </form>
+    </div>
+</div>

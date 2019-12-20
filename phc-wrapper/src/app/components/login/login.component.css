@@ -1,0 +1,14 @@
+.loginForm {
+    min-width: 100%;
+    max-width: 300px;
+    width: 100%;
+}
+
+small {
+  color: #000;
+}
+
+mat-form-field{
+  margin-bottom: 10px;
+}
+

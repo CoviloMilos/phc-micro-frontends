@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="column">
+          <form [formGroup]="createForm" (ngSubmit)="submitForm()" novalidate>
+            <h5 class="card-title">Flower</h5>
+  
+            <!-- Name Ser-->
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Enter serbian name</mat-label>
+              <input matInput placeholder="Name on Serbian" formControlName="nameSer">
+              <!-- error -->
+              <mat-error *ngIf="errorHandling('nameSer', 'required')">
+                You must provide <strong>serbian name of flower.</strong>
+              </mat-error>
+            </mat-form-field>
+            
+            <!-- Name Lat -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter latin name</mat-label>
+                <input matInput placeholder="Name on Latin" formControlName="nameLat">
+                <!-- error -->
+                <mat-error *ngIf="errorHandling('nameLat', 'required')">
+                    You must provide <strong>latin name of flower.</strong>
+                </mat-error>
+            </mat-form-field>
+            
+            <!-- Watering Period -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Watering Period</mat-label>
+                <input matInput placeholder="Watering Period" formControlName="wateringPeriod">
+                <!-- error -->
+                <mat-error *ngIf="errorHandling('wateringPeriod', 'required')">
+                    You must provide <strong>watering period.</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Description -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter description</mat-label>
+                <textarea cols="15" rows="10" matInput placeholder="Description" formControlName="description"></textarea>
+                <!-- error -->
+                <mat-error *ngIf="errorHandling('description', 'required')">
+                    You must provide <strong>description.</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Submit -->
+            <div class="button-wrapper">
+              <button mat-flat-button color="primary">Submit</button>
+            </div>
+  
+          </form>
+    </div>
+    
+</div>

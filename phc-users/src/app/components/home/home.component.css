@@ -1,0 +1,81 @@
+.container {
+    height: 630px !important;
+    text-align: center;
+    align-content: center;
+    background: rgba(255, 255, 255, 0.0);
+}
+
+.container-right {
+    text-align: center;
+    align-content: center;
+    background: rgba(255, 255, 255, 0.0);
+    padding: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.small-box, .large-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    border-radius: 8px;
+  }
+  
+.small-box {
+  height: 100px;
+  width: 100px;
+}
+
+.large-box {
+  height: 500px;
+  width: 450px;
+  padding: 10px;
+}
+
+mat-tab-group {
+  align-items: center;
+}
+  
+mat-tab-header {
+    margin-bottom: 30px;
+    width: 80%;
+}
+
+:host ::ng-deep .mat-tab-header {
+  width: 100%;
+}
+
+mat-tab {
+    font-weight: 500;
+}
+
+mat-ink-bar {
+    background-color: #F8475F;
+}
+  
+
+.header-image {
+  background-image: url('https://cdn3.iconfinder.com/data/icons/spring-23/32/sunflower-flower-spring-blossom-nature-ecology-512.png');
+  background-size: cover;
+}
+
+mat-card {
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+}
+mat-card-header {
+  margin-bottom: 15px;
+}
+mat-card-title {
+  padding-top: 6px;
+}
+
+.description-content {
+  text-align: left;
+}
+
+mat-form-field {
+  width: 100%;
+}

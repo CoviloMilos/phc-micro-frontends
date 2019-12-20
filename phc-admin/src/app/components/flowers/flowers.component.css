@@ -1,0 +1,21 @@
+table {
+    text-align: center !important;
+    width: 100%;
+  }
+  
+.mat-header-cell {
+text-align: center;
+}
+
+.container {
+  padding: 10px;
+}
+
+.btn {
+  float: right;
+  margin-top: 10px;
+}
+
+mat-paginator {
+  width: 100%;
+}
